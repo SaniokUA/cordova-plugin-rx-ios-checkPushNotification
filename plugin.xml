@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+        id="cordova-plugin-rx-ios-checkPushNotification"
+        version="1.0.0">
+
+  <name>RXCheckPushNotification</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="index.js" target="js/index.js"/>
+
+  <js-module src="index.js" name="RXCheckPushNotification">
+    <clobbers target="RXCheckPushNotification" />
+  </js-module>
+  
+  <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+          <feature name="RXCheckPushNotification">
+              <param name="ios-package" value="RXCheckPushNotification"/>
+          </feature>
+          <feature name="setPlayStatus">
+            <param name="ios-package" value="setPlayStatus" />
+            <param name="onload" value="true" />
+          </feature>
+      </config-file>
+      
+      <header-file src="src/ios/RXCheckPushNotification.h" />
+      <source-file src="src/ios/RXCheckPushNotification.m" />
+  </platform>
+</plugin>
